@@ -30,6 +30,9 @@ export default function ProductItem({ product }: { product: Product }) {
               src={mainImage}
               alt={name}
               fill
+              sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
               style={{ objectFit: "cover", borderRadius: "3px" }}
             />
             <Badge variant="solid" colorScheme="blue" marginLeft={1}>

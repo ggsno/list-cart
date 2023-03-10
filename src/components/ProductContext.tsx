@@ -26,7 +26,7 @@ const ProductContext = createContext<ProductContextProps>(null!);
 export function ProductProvider({ children }: { children: ReactNode }) {
   const { data: productOrigin } = useQuery(["products"], fetchGetProduct);
 
-  const [products, setProducts] = useState<Product[]>([]);
+  const [products, setProducts] = useState<Product[]>(productOrigin ?? []);
 
   const handleFilter: ProductContextProps["handleFilter"] = ({
     locations,
@@ -43,10 +43,6 @@ export function ProductProvider({ children }: { children: ReactNode }) {
       )
     );
   };
-
-  useEffect(() => {
-    if (productOrigin) setProducts(productOrigin);
-  }, [productOrigin]);
 
   return (
     <ProductContext.Provider value={{ products, handleFilter }}>

@@ -2,7 +2,7 @@ import axios from "axios";
 import { Product } from "./product";
 
 export const fetchGetReserve = async () => {
-  return axios.get<ReserveProps[]>("/api/reserve");
+  return (await axios.get<ReserveProps[]>("/api/reserve")).data;
 };
 
 export const fetchPostReserve = async (

@@ -6,9 +6,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 export default function ButtonReservation({ product }: { product: Product }) {
   const toast = useToast();
   const queryClient = useQueryClient();
-  const { data: reservations } = useQuery(["reserve"], fetchGetReserve, {
-    select: ({ data }) => data,
-  });
+  const { data: reservations } = useQuery(["reserve"], fetchGetReserve);
 
   const isReserved = reservations?.some(
     (e) => e.productInfo.idx === product.idx

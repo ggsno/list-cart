@@ -24,9 +24,7 @@ type ProductContextProps = {
 const ProductContext = createContext<ProductContextProps>(null!);
 
 export function ProductProvider({ children }: { children: ReactNode }) {
-  const { data: productOrigin } = useQuery(["products"], fetchGetProduct, {
-    select: ({ data }) => data,
-  });
+  const { data: productOrigin } = useQuery(["products"], fetchGetProduct);
 
   const [products, setProducts] = useState<Product[]>([]);
 

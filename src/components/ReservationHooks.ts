@@ -14,7 +14,7 @@ export const useReservation = () => {
     ["reserve"],
     fetchGetReserve,
     {
-      select: ({ data }) =>
+      select: (data) =>
         data.sort((a, b) => Number(b.reserveDate) - Number(a.reserveDate)),
     }
   );

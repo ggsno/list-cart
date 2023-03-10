@@ -5,10 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 export default function ReservationBill() {
   const { data: reservations, isSuccess } = useQuery(
     ["reserve"],
-    fetchGetReserve,
-    {
-      select: ({ data }) => data,
-    }
+    fetchGetReserve
   );
   return (
     <>

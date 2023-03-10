@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const fetchGetProduct = async () => {
-  return axios.get<GetProductResponse>("/api/product");
+  return (await axios.get<GetProductResponse>("/api/product")).data;
 };
 
 export type GetProductResponse = Product[];

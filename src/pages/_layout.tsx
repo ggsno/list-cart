@@ -9,9 +9,7 @@ import { fetchGetReserve } from "@/services/reserve";
 
 export default function LayoutRoot({ children }: { children: ReactNode }) {
   const router = useRouter();
-  const { data: reservations } = useQuery(["reserve"], fetchGetReserve, {
-    select: ({ data }) => data,
-  });
+  const { data: reservations } = useQuery(["reserve"], fetchGetReserve);
 
   return (
     <>
